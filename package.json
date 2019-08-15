@@ -6,7 +6,6 @@
     "axios": "^0.18.1",
     "egg": "^2.2.1",
     "egg-cors": "^2.1.0",
-    "egg-jwt": "^3.1.5",
     "egg-redis": "^2.4.0",
     "egg-scripts": "^2.5.0",
     "js-base64": "^2.5.1",
@@ -26,10 +25,9 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "start": "cross-env EGG_SERVER_ENV=local egg-bin dev",
-    "build": "egg-bin dev",
-    "start:docker": "egg-scripts start --port=80 --title=egg-server",
-    "stop": "egg-scripts stop --title=egg-server-yundun-fe-service",
+    "dev": "cross-env EGG_SERVER_ENV=local egg-bin dev",
+    "start": "egg-scripts start --port=80 --title=egg-server",
+    "stop": "egg-scripts stop --title=egg-server",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
@@ -45,6 +43,6 @@
     "type": "git",
     "url": ""
   },
-  "author": "kongfanbo@yundun.com",
+  "author": "fe@yundun.com",
   "license": "MIT"
 }

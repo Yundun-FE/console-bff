@@ -4,7 +4,7 @@ const Service = require('egg').Service;
 const axios = require('axios');
 
 class ApiService extends Service {
-  async fetch({ method, url, token, data, headers }) {
+  async fetch({ method, url, token, data }) {
     let res;
     try {
       res = await axios({
@@ -17,7 +17,6 @@ class ApiService extends Service {
       });
 
     } catch (e) {
-      console.log(e.response);
       res = e.response;
     }
     return res.data;

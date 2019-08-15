@@ -26,7 +26,6 @@ class AuthController extends Controller {
         method: 'POST',
         data: qs.stringify(data),
         headers: {
-          // Cookie: `sso_token_yundunv5=${SSOToken}`
           Cookie: `sso_token_yundunv5=${SSOToken}`,
         },
       });
