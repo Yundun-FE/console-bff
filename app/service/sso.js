@@ -33,13 +33,11 @@ class SsoService extends Service {
     return token;
   }
 
-  async getTokenByKey(keyData) {
+  async getTokenByKey(keyData, refresh = false) {
     const { username, password, server } = this.ctx.service.agent.parseData(keyData);
-    const method = 'get';
-
     let token;
     token = await this.app.redis.get(keyData);
-    if (!token) {
+    if (!token || refresh) {
       const res = await this.ctx.service.sso.login({ username, password, server });
       token = res.token;
       this.app.redis.set(keyData, token);

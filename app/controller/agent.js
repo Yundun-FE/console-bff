@@ -10,7 +10,7 @@ class ApiController extends Controller {
     const url = `${server}/api${this.ctx.url.split('api')[1]}`;
     const token = await this.ctx.service.sso.getTokenByKey(key);
 
-    this.ctx.body = await this.ctx.service.api.fetch({ method, url, token });
+    this.ctx.body = await this.ctx.service.api.fetch({ method, url, token, key });
   }
 
   async post() {
@@ -21,7 +21,7 @@ class ApiController extends Controller {
     const token = await this.ctx.service.sso.getTokenByKey(key);
     const data = this.ctx.request.body;
 
-    this.ctx.body = await this.ctx.service.api.fetch({ method, url, token, data });
+    this.ctx.body = await this.ctx.service.api.fetch({ method, url, token, data, key });
   }
 
   async put() {
@@ -32,7 +32,7 @@ class ApiController extends Controller {
     const token = await this.ctx.service.sso.getTokenByKey(key);
     const data = this.ctx.request.body;
 
-    this.ctx.body = await this.ctx.service.api.fetch({ method, url, token, data });
+    this.ctx.body = await this.ctx.service.api.fetch({ method, url, token, data, key });
   }
 
   async delete() {
@@ -43,7 +43,7 @@ class ApiController extends Controller {
     const token = await this.ctx.service.sso.getTokenByKey(key);
     const data = this.ctx.request.body;
 
-    this.ctx.body = await this.ctx.service.api.fetch({ method, url, token, data });
+    this.ctx.body = await this.ctx.service.api.fetch({ method, url, token, data, key });
   }
 }
 
