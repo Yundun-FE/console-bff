@@ -5,5 +5,5 @@ WORKDIR /app
 
 RUN npm install --production
 
-EXPOSE 80
-CMD ["npm", "run", "start"]
+EXPOSE 7001
+CMD ["npm", "run", "dev"]
