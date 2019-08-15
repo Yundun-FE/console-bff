@@ -3,7 +3,7 @@
 module.exports = appInfo => {
   const config = exports = {};
 
-  config.key = 'bff';
+  config.keys = 'bff';
 
   config.middleware = [ 'errorHandler' ];
 
