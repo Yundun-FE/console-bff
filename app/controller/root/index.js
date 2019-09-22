@@ -8,7 +8,22 @@ class IndexController extends Controller {
     const { ctx } = this;
     const { name, version } = PKG;
 
-    ctx.body = { name, version };
+    const servers = [
+      {
+        label: 'Admin V5',
+        value: 'adminv5',
+      },
+      {
+        label: 'Home V5',
+        value: 'homev5',
+      },
+      {
+        label: 'YUNDUN FE',
+        value: 'fe',
+      },
+    ];
+
+    ctx.body = { name, version, servers };
   }
 }
 

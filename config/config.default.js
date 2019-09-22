@@ -7,6 +7,12 @@ module.exports = appInfo => {
 
   config.middleware = [ 'errorHandler' ];
 
+  config.server = {
+    serviceList: [],
+    defaultService: 'YUNDUN FE',
+    defaultServer: '',
+  };
+
   config.redis = {
     client: {
       port: 6379,
