@@ -27,6 +27,7 @@
     "node": ">=8.9.0"
   },
   "scripts": {
+    "release": "pm2 startOrReload ecosystem.config.js",
     "dev": "cross-env EGG_SERVER_ENV=local egg-bin dev",
     "start": "egg-scripts start --port=80 --title=egg-server",
     "stop": "egg-scripts stop --title=egg-server",
